@@ -1,0 +1,48 @@
+{
+  "connection": "default",
+  "collectionName": "versions",
+  "info": {
+    "name": "version",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "year": {
+      "type": "integer"
+    },
+    "mode": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "type": "enumeration"
+    },
+    "date": {
+      "type": "string"
+    },
+    "ytVideoId": {
+      "type": "string"
+    },
+    "album": {
+      "type": "string"
+    },
+    "speakers": {
+      "collection": "speaker",
+      "via": "versions",
+      "dominant": true
+    },
+    "sponsors": {
+      "collection": "sponsor",
+      "via": "versions"
+    }
+  }
+}

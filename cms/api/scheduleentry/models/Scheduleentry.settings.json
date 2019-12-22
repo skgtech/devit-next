@@ -1,0 +1,46 @@
+{
+  "connection": "default",
+  "collectionName": "schedules",
+  "info": {
+    "name": "scheduleentry",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "opening",
+        "coffee",
+        "lunch",
+        "talk",
+        "closing",
+        "after"
+      ],
+      "type": "enumeration"
+    },
+    "time": {
+      "type": "integer"
+    },
+    "day": {
+      "enum": [
+        "workshops",
+        "talks"
+      ],
+      "type": "enumeration"
+    },
+    "talk": {
+      "model": "talk",
+      "via": "scheduleentry"
+    }
+  }
+}

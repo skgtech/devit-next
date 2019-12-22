@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "partners",
+  "info": {
+    "name": "partners",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "url": {
+      "type": "string"
+    },
+    "override_height": {
+      "type": "string"
+    }
+  }
+}

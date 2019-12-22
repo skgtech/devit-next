@@ -1,0 +1,40 @@
+{
+  "connection": "default",
+  "collectionName": "talks",
+  "info": {
+    "name": "talk",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "speakers": {
+      "collection": "speaker",
+      "via": "talks",
+      "dominant": true
+    },
+    "tags": {
+      "collection": "tag"
+    },
+    "type": {
+      "enum": [
+        "workshop",
+        "talk"
+      ],
+      "type": "enumeration"
+    },
+    "scheduleentry": {
+      "model": "scheduleentry",
+      "via": "talk"
+    }
+  }
+}

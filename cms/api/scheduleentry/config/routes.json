@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/scheduleentries",
+      "handler": "Scheduleentry.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/scheduleentries/count",
+      "handler": "Scheduleentry.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/scheduleentries/:id",
+      "handler": "Scheduleentry.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/scheduleentries",
+      "handler": "Scheduleentry.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/scheduleentries/:id",
+      "handler": "Scheduleentry.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/scheduleentries/:id",
+      "handler": "Scheduleentry.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

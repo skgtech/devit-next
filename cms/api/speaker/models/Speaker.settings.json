@@ -1,0 +1,58 @@
+{
+  "connection": "default",
+  "collectionName": "speakers",
+  "info": {
+    "name": "speaker",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "hereFor": {
+      "enum": [
+        "workshop",
+        "talk",
+        "talkandworkshop",
+        "masterofceremonies"
+      ],
+      "type": "enumeration"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "tags": {
+      "collection": "tag"
+    },
+    "talks": {
+      "collection": "talk",
+      "via": "speakers"
+    },
+    "versions": {
+      "collection": "version",
+      "via": "speakers"
+    }
+  }
+}

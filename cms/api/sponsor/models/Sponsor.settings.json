@@ -1,0 +1,51 @@
+{
+  "connection": "default",
+  "collectionName": "sponsors",
+  "info": {
+    "name": "sponsor",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "url": {
+      "type": "string"
+    },
+    "override_height": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "type": {
+      "enum": [
+        "platinum",
+        "gold",
+        "silver",
+        "bronze",
+        "media",
+        "drinks"
+      ],
+      "type": "enumeration"
+    },
+    "versions": {
+      "collection": "version",
+      "via": "sponsors",
+      "dominant": true
+    }
+  }
+}
