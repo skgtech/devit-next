@@ -17,22 +17,7 @@
     "year": {
       "type": "integer"
     },
-    "mode": {
-      "enum": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "type": "enumeration"
-    },
-    "date": {
-      "type": "string"
-    },
     "ytVideoId": {
-      "type": "string"
-    },
-    "album": {
       "type": "string"
     },
     "speakers": {
@@ -43,6 +28,32 @@
     "sponsors": {
       "collection": "sponsor",
       "via": "versions"
+    },
+    "open": {
+      "type": "boolean"
+    },
+    "openCallForPapers": {
+      "type": "boolean"
+    },
+    "openCallForSponsors": {
+      "type": "boolean"
+    },
+    "partners": {
+      "collection": "partners",
+      "via": "versions"
+    },
+    "talks": {
+      "collection": "talk",
+      "via": "version"
+    },
+    "talksDay": {
+      "type": "date"
+    },
+    "workshopsDay": {
+      "type": "date"
+    },
+    "openTickets": {
+      "type": "boolean"
     }
   }
 }

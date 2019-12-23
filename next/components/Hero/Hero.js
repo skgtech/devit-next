@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import logo from '../../public/logo/white/logo.svg'
 
-const Hero = ({ date, menu }) => {
+const Hero = ({ open, date, menu }) => {
   return (
     <div
       css={{
@@ -67,8 +67,7 @@ const Hero = ({ date, menu }) => {
           marginBottom: '8px',
           marginTop: '40px',
         }}
-      >
-        {date}
+      > {open ? `Thank you for being part of DEVit 2020 ❤️` : date}
       </h1>
       <h2
         css={{

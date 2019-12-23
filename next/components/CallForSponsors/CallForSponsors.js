@@ -28,7 +28,7 @@ const CallForSponsors = ({ sponsors }) => {
           The popularity of breakfast foods is a good reason to keep dependable starters, such as
           eggs, bread and other staples, on hand.
         </DarkLeading>
-        <Stack list={sponsors.edges.map(({ node }) => node)} />
+        <Stack list={sponsors} />
         <BlockCta>Apply to sponsor</BlockCta>
       </Grid>
     </div>

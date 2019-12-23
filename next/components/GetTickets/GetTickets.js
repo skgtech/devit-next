@@ -7,8 +7,8 @@ import BlockCTA from '../BlockCta'
 
 import TicketsLogo from '../../public/new/tickets.svg'
 
-const GetTickets = ({ enabled, url }) => {
-  return enabled ? (
+const GetTickets = ({ ticketsEnabled }) => {
+  return (
     <div
       css={{
         backgroundColor: '#f5f8fa',
@@ -30,22 +30,25 @@ const GetTickets = ({ enabled, url }) => {
           </Col>
           <Col xs="6">
             <DarkBlockHeading>Get your tickets now!</DarkBlockHeading>
-            <p className="dark">
-              Whether it’s Frontend, Backend, DevOps or Mobile that you care about, join us to learn
-              about the most modern practices and techniques. Secure your ticket now, while there is
-              still availability.
-            </p>
-            <BlockCTA to={url}>Buy tickets</BlockCTA>
+            {ticketsEnabled ?
+              <>
+                <p className="dark">
+                  Whether it’s Frontend, Backend, DevOps or Mobile that you care about, join us to learn
+                  about the most modern practices and techniques. Secure your ticket now, while there is
+                  still availability.
+                </p>
+                <BlockCTA to="/tickets">Buy tickets</BlockCTA>
+              </>
+              : <p className="dark">Tickets are soon to be announced. Subscribe to our mailing list to be the first to hear when they are open.</p>
+            }
           </Col>
         </Row>
       </Grid>
-    </div>
-  ) : null
+    </div>)
 }
 
 GetTickets.propTypes = {
   enabled: PropTypes.bool,
-  url: PropTypes.string,
 }
 
 export default GetTickets

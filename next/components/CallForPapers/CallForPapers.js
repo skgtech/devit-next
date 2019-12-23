@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { css } from '@emotion/core'
-import Img from 'gatsby-image'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 
 import BlockCta from '../BlockCta'
@@ -63,7 +62,7 @@ const CallForPapers = ({ speaker }) => {
                 box-shadow: 0 -10px 25px 0 rgba(0, 62, 115, 0.1);
               `}
             >
-              <Img
+              <img
                 css={css`
                   width: 100%;
                   height: 100%;
@@ -71,7 +70,7 @@ const CallForPapers = ({ speaker }) => {
                   max-height: 240px;
                   border-radius: 50%;
                 `}
-                fixed={speaker.img.childImageSharp.fixed}
+                src={speaker.img}
                 alt={`${speaker.first_name} ${speaker.last_name}`}
               />
               <div

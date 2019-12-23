@@ -94,7 +94,7 @@ const Speaker = ({ speaker, speaker_page }) => {
               align-items: center;
             `}
           >
-            {tagline.slice(0, 60)}
+            {tagline && tagline.slice(0, 60)}
           </div>
           <HereFor herefor={hereFor} />
         </>

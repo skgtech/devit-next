@@ -1,43 +1,32 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { StaticQuery, graphql } from 'gatsby'
 
 import Menu from './Menu'
 
-const Header = () => {
+import svg from '../public/header/screen.jpg';
+
+const Header = ({date, ticketsEnabled}) => {
   return (
-    <StaticQuery
-      query={graphql`
-        {
-          file(relativePath: { eq: "header/screen.jpg" }) {
-            relativePath
-            publicURL
-          }
+    <header
+      css={css`
+        background-image: linear-gradient(rgba(0, 62, 115, 0.9), rgba(0, 62, 115, 0.9)),
+          url(${svg});
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        min-height: 300px;
+        height: auto;
+        padding-top: 40px;
+
+        @media (max-width: $screen-sm-min) {
+          height: auto;
+          min-height: auto;
+          padding-top: 0;
         }
       `}
-      render={data => (
-        <header
-          css={css`
-            background-image: linear-gradient(rgba(0, 62, 115, 0.9), rgba(0, 62, 115, 0.9)),
-              url(${data.file.publicURL});
-            background-size: cover;
-            background-position: center top;
-            background-repeat: no-repeat;
-            min-height: 300px;
-            height: auto;
-            padding-top: 40px;
-
-            @media (max-width: $screen-sm-min) {
-              height: auto;
-              min-height: auto;
-              padding-top: 0;
-            }
-          `}
-        >
-          <Menu />
-        </header>
-      )}
-    />
+    >
+      <Menu date={date} ticketsEnabled={ticketsEnabled} />
+    </header>
   )
 }
 

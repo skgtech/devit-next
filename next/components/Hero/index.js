@@ -3,17 +3,11 @@ import React from 'react'
 import Hero from './Hero'
 import Menu from '../Menu/Menu'
 
-const HeroContainer = () => {
-  const date = 'JUNE'
-  const tickets = {
-    enabled: true,
-    url: 'url link',
-  };
-
+const HeroContainer = ({date, ticketsEnabled}) => {
   return (
     <Hero
       date={date}
-      menu={<Menu date={date} tickets={tickets} />}
+      menu={<Menu date={date} ticketsEnabled={ticketsEnabled} />}
     />
   )
 }

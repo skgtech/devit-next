@@ -2,13 +2,9 @@ import React from 'react'
 
 import GetTickets from './GetTickets'
 
-const GetTicketsContainer = () => {
-  const tickets = {
-    enabled: true,
-    url: 'url link',
-  };
+const GetTicketsContainer = ({ticketsEnabled}) => {
   return (
-    <GetTickets enabled={tickets.enabled} url={tickets.url} />
+    <GetTickets ticketsEnabled={ticketsEnabled} />
   )
 }
 

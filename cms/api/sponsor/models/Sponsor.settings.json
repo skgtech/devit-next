@@ -44,8 +44,8 @@
     },
     "versions": {
       "collection": "version",
-      "via": "sponsors",
-      "dominant": true
+      "dominant": true,
+      "via": "sponsors"
     }
   }
 }

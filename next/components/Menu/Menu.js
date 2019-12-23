@@ -9,6 +9,7 @@ import blueLogo from '../../public/logo/blue/logo.svg'
 import whiteLogo from '../../public/logo/white/logo.svg'
 
 const mainMenuLinkStyles = {
+  textDecoration: 'none',
   fontWeight: 'bold',
   textTransform: 'uppercase',
   color: 'rgba(255,255,255,0.7)',
@@ -26,9 +27,7 @@ const mainMenuLinkStyles = {
   },
 }
 
-const MainMenuLink = styled.a({
-  a: mainMenuLinkStyles,
-})
+const MainMenuLink = styled.a(mainMenuLinkStyles)
 
 const MainMenuCTALink = styled.a({
   ...mainMenuLinkStyles,
@@ -52,7 +51,7 @@ const MainMenuCTALink = styled.a({
   },
 })
 
-const MenuContainer = ({ date, tickets }) => {
+const MenuContainer = ({ date, ticketsEnabled }) => {
   return (
     <nav
       css={{
@@ -157,13 +156,13 @@ const MenuContainer = ({ date, tickets }) => {
                 Blog
               </MainMenuLink>
             </li>
-            {tickets.enabled ? (
+            {ticketsEnabled ? (
               <li>
                 <MainMenuCTALink
                   target="_blank"
                   rel="noopener"
                   className="main-menu__link--cta cta"
-                  href={tickets.url}
+                  href="/tickets"
                 >
                   Buy tickets
                 </MainMenuCTALink>
@@ -178,7 +177,7 @@ const MenuContainer = ({ date, tickets }) => {
 
 MenuContainer.propTypes = {
   date: PropTypes.string,
-  tickets: PropTypes.object,
+  tickets: PropTypes.bool,
 }
 
 export default MenuContainer

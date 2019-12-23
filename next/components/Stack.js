@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 
 import { Row, Col } from 'react-flexbox-grid'
 
-const Stack = ({ list }) => {
+const Stack = ({ css, list }) => {
   return (
     <Row
       center="xs"
       css={{
+        ...css,
         paddingTop: '30px',
         paddingBottom: '30px',
         '&:first-child': {

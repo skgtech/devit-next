@@ -27,6 +27,11 @@
     },
     "override_height": {
       "type": "string"
+    },
+    "versions": {
+      "collection": "version",
+      "dominant": true,
+      "via": "partners"
     }
   }
 }
